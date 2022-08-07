@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./components/Button";
 import Result from "./components/Result";
 import "./App.css";
+import MathOperations from "./components/MathOperations";
 
 const App = () => {
   const clickHandler = text => {
@@ -28,13 +29,7 @@ const App = () => {
         <button>Clear</button>
         <button>R</button>
       </div>
-      <div className="math-operations">
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>=</button>
-      </div>
+      <MathOperations onClickOperation={operation => console.log(operation)} onClickEqual={equal => console.log(equal)} />
     </main>)
 };
 
