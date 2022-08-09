@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Result = ({value}) => {
   return (<div className="result">
-    <span>{value}</span>
+    <span>{value === '' ? 0 : value}</span>
   </div>);
 };
 
