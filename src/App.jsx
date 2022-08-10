@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import words from 'lodash.words';
 import "./App.css";
 import Functions from "./components/Functions";
 import MathOperations from "./components/MathOperations";
@@ -9,6 +10,8 @@ const REGEX = /[^-^+^*^/]+/g;
 
 const App = () => {
   const [stack, setStack] = useState('');
+
+  const items = words(stack, REGEX);
 
   const clickHandler = number => {
     setStack(`${stack}${number}`)
@@ -34,7 +37,7 @@ const App = () => {
   return (
     <main className="react-calculator">
       Calc App
-      <Result value={stack} />
+      <Result value={items[items.length - 1]} />
       <Numbers onClickNumber={clickHandler} />
       <Functions 
         onContentClear={onContentClear} 
